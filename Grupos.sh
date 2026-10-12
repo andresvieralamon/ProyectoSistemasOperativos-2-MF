@@ -3,16 +3,16 @@ while true
 do
     clear
 
-    echo "-----------------------"
-    echo "      MENU GRUPOS"
-    echo "-----------------------"
+    echo "==========================="
+    echo "        MENU GRUPOS"
+    echo "==========================="
     echo "1) Ingresar Grupo"
     echo "2) Dar de baja Grupo"
     echo "3) Listar Grupos"
     echo "4) Consultar Grupo"
     echo "5) Ver alumnos de un Grupo"
     echo "6) Volver al menu principal"
-    echo "-----------------------"
+    echo "==========================="
     echo "Ingresar opcion:"
     read op
 
@@ -33,7 +33,7 @@ do
         echo "Ingresar año del grupo:"
         read ano
 
-        # Verificar si ya existe
+        # Verifica si ya existe
         existe=$(grep "^$grupo," Grupos.dat)
 
         if [ -n "$existe" ]
@@ -44,13 +44,15 @@ do
             echo "Grupo ingresado correctamente."
         fi
 
-        read -p "Presione ENTER para continuar..."
+        echo "Presione Enter Para Volver Al Menu De Grupos..."
+        read skip
+        sh Grupos.sh
         ;;
     2)
         echo "Ingresar nombre del grupo a eliminar:"
         read grupo
 
-        # Verificar si existe
+        # sigue verificando si existe, aca si no existe
         existe=$(grep "^$grupo," Grupos.dat)
 
         if [ -z "$existe" ]
@@ -71,12 +73,14 @@ do
             fi
         fi
 
-        read -p "Presione ENTER para continuar..."
+        echo "Presione Enter Para Volver Al Menu De Grupos..."
+        read skip
+        sh Grupos.sh
         ;;
     3)
-        echo "-------------------------------"
-        echo "        LISTADO DE GRUPOS"
-        echo "-------------------------------"
+        echo "=============================="
+        echo "      LISTADO DE GRUPOS"
+        echo "=============================="
 
         if [ ! -s Grupos.dat ]
         then
@@ -97,7 +101,9 @@ do
             done < Grupos.dat
         fi
 
-        read -p "Presione ENTER para continuar..."
+        echo "Presione Enter Para Volver Al Menu De Grupos..."
+        read skip
+        sh Grupos.sh
         ;;
     4)
         echo "Ingresar nombre del grupo:"
@@ -114,9 +120,9 @@ do
             cantidad=$(grep ",$grupo$" Alumnos.dat | wc -l)
 
             echo
-            echo "-------------------------------"
-            echo "         DATOS DEL GRUPO"
-            echo "-------------------------------"
+            echo "=============================="
+            echo "        DATOS DEL GRUPO"
+            echo "=============================="
             echo "Grupo: $nombre"
             echo "Orientacion: $or"
             echo "Salon: $sal"
@@ -125,7 +131,9 @@ do
             echo "Cantidad de alumnos: $cantidad / 15"
         fi
 
-        read -p "Presione ENTER para continuar..."
+        echo "Presione Enter Para Volver Al Menu De Grupos..."
+        read skip
+        sh Grupos.sh
         ;;
     5)
         echo "Ingresar nombre del grupo:"
@@ -138,9 +146,9 @@ do
             echo "El grupo no existe."
         else
             echo
-            echo "--------------------------------"
+            echo "================================"
             echo " ALUMNOS DEL GRUPO: $grupo"
-            echo "--------------------------------"
+            echo "================================"
 
             alumnos=$(grep ",$grupo$" Alumnos.dat)
 
@@ -155,7 +163,9 @@ do
             fi
         fi
 
-        read -p "Presione ENTER para continuar..."
+        echo "Presione Enter Para Volver Al Menu De Grupos..."
+        read skip
+        sh Grupos.sh
         ;;
     6)
         sh ProyectoFinal.sh
@@ -164,7 +174,9 @@ do
 
     *)
         echo "Opcion incorrecta."
-        read -p "Presione ENTER para continuar..."
+        echo "Presione Enter Para Volver Al Menu De Grupos..."
+        read skip
+        sh Grupos.sh
         ;;
 
     esac
