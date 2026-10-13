@@ -168,6 +168,8 @@ do
         sh Grupos.sh
         ;;
     6)
+        clear
+        exit
         sh ProyectoFinal.sh
         ;;
 
