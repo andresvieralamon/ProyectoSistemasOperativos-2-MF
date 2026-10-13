@@ -49,7 +49,6 @@ do
         echo "Saliendo del programa..."
         exit
         ;;
-4
     *)
         echo "Opcion incorrecta"
         echo "Escribe Enter para Volver al Menu Principal..."
@@ -58,4 +57,4 @@ do
         ;;
 
     esac
-done
+  done
