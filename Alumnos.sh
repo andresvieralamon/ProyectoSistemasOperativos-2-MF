@@ -1,4 +1,5 @@
 
+
 while true
 do
     clear
@@ -100,6 +101,8 @@ do
         fi
 
         read -p "Presione ENTER para continuar..."
+        read skip
+        sh Alumnos.sh
         ;;
     2)
         echo "Ingresar CI del alumno:"
@@ -118,6 +121,8 @@ do
         fi
 
         read -p "Presione ENTER para continuar..."
+         read skip
+         sh Alumnos.sh
         ;;
     3)
         echo "Ingresar CI del alumno:"
@@ -175,6 +180,8 @@ do
         fi
 
         read -p "Presione ENTER para continuar..."
+        read skip
+        sh Alumnos.sh
         ;;
     5)
         echo "-----------------------------"
@@ -194,6 +201,8 @@ do
         fi
 
         read -p "Presione ENTER para continuar..."
+        read skip
+        sh Alumnos.sh
         ;;
     6)
         echo "Ingresar año:"
@@ -239,4 +248,3 @@ do
 
     esac
 done
-```
