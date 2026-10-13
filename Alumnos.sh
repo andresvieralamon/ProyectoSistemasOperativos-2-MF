@@ -1,5 +1,3 @@
-
-
 while true
 do
     clear
@@ -235,6 +233,8 @@ do
         ;;
 
     7)
+        clear
+        exit 
         sh ProyectoFinal.sh
         ;;
 
