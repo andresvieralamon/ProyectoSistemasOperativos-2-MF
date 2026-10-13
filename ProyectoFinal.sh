@@ -47,6 +47,7 @@ do
 
     3)
         echo "Saliendo del programa..."
+        clear 
         exit
         ;;
     *)
