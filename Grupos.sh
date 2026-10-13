@@ -1,4 +1,3 @@
-    clear
 while true
 do
     clear
