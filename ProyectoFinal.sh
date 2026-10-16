@@ -8,18 +8,20 @@ echo "          Marcos Siuciak"
 echo "        Thiago Utaravicius"
 echo "====================================="
 
-if touch  Alumnos.dat 
+if [ -e Alumnos.dat ]
 then
-  echo "El archivo Alumnos.dat fue creado."
-else 
-        echo "El archivo Alumnos.dat ya existe."
+    echo "El archivo Alumnos.dat ya existe."
+else
+    touch Alumnos.dat
+    echo "El archivo Alumnos.dat fue creado."
 fi
  
-if  touch Grupos.dat 
+if [ -e Grupos.dat ]
 then
-  echo "El archivo Grupos.dat fue creado." 
-else 
-    echo "El archivo Grupos.dat ya existe."     
+    echo "El archivo Grupos.dat ya existe."
+else
+    touch Grupos.dat
+    echo "El archivo Grupos.dat fue creado."
 fi
 
 while true
